@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/mytags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,12 +17,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%--
-forEach의 varStatue 속성(javax.servlet.jsp.jstl.core.LoopTagStatus);
- --%>
- 
- <%
- String[] arr = {"java" "script", "css v;iib
- %>
+
+<h1>Attribute 사용</h1>
+<jsp:useBean id="mem" class="chap11.Member">
+	<jsp:setProperty name="mem" property="name" value="jane" />
+</jsp:useBean>
+
+<my:tagEx5 count="3" member="${mem }"/>
+
 </body>
 </html>
